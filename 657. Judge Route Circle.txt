@@ -1,0 +1,11 @@
+public class Solution {
+    public bool JudgeCircle(string moves) {
+            int upCount = moves.Count(x => x == 'U');
+            int downCount = moves.Count(x => x == 'D');
+            int rightCount = moves.Count(x => x == 'R');
+            int LeftCount = moves.Count(x => x == 'L');
+            if (upCount == downCount && rightCount == LeftCount)
+                return true;
+            return false;
+    }
+}

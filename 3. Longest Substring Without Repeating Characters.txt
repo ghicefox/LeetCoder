@@ -1,0 +1,27 @@
+//Time Limit Exceeded
+public class Solution {
+    public int LengthOfLongestSubstring(string s) {
+        var strList = new List<char>();
+        int count = 0;
+        for(int i = 0;i<s.Length;i++)
+        {
+            strList = new List<char>();
+            for(int j = i;j<s.Length;j++)
+            {
+                if(!strList.Contains(s[j]))
+                {
+                    strList.Add(s[j]);
+                    if(strList.Count()>count)
+                    {
+                        count = strList.Count();
+                    }
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+        return count;
+    }
+}

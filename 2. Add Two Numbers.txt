@@ -1,0 +1,34 @@
+public class Solution {
+    public ListNode AddTwoNumbers(ListNode l1, ListNode l2) {
+        var l3 = new ListNode(0);
+        var l3head = l3;
+        var flag = 0;
+        for(;l1!=null||l2!=null;)
+        {
+            var temp = flag;
+            if(l1!=null)
+            {
+                temp = temp+l1.val;
+                l1=l1.next;
+            }
+            if(l2!=null)
+            {
+                temp = temp+l2.val;
+                l2=l2.next;
+            }
+            flag=0;
+            if(temp>9)
+            {
+                flag=1;
+                temp = temp-10;
+            }
+            l3.next = new ListNode(temp);
+            l3 = l3.next;
+        }
+        if(flag == 1)
+        {
+            l3.next = new ListNode(1);
+        }
+        return l3head.next;
+    }
+}
